@@ -10,5 +10,10 @@ public class HomeController {
     public String home() {
         return "home";
     }
-    
+
+    @GetMapping("form")
+    public String form() {
+        return "form";
+    }
+
 }

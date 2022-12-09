@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+
+<h2>WRITE</h2>
+<form data-th-action="@{form}" method="post">
+  <div>
+    <label for="title"></label>
+    <input type="text" id="title" name="title"
+              placeholder="title">
+  </div>
+
+  <div>
+    <label for="writer"></label>
+    <input type="text" id="writer" name="writer"
+              placeholder="writer">
+  </div>
+
+  <div>
+    <label for="content"></label>
+    <textarea id="content" name="content"
+              rows="20" cols="25"
+              placeholder="content"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">submit</button>
+  </div>
+
+</form>
+</body>
+</html>
