@@ -11,8 +11,7 @@ import javax.persistence.*;
 @Entity
 public class Board {
 
-    public Board() {
-    }
+    public Board() {}
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no;
