@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+
 </head>
 <body>
-$END$
+
+  <h2>DETAIL</h2>
+
+  <div>
+      <div>
+          <span data-th-text="'No. ' + ${boardResponseDto.no}">1</span>
+      </div>
+
+      <div>
+          <span data-th-text="'Title. ' + ${boardResponseDto.title}">제목</span>
+      </div>
+
+      <div>
+          <span data-th-text="'Writer. ' + ${boardResponseDto.writer}">작성자</span>
+      </div>
+
+      <div>
+          <span data-th-text="'Content. ' + ${boardResponseDto.content}">내용</span>
+      </div>
+
+  </div>
+
 </body>
 </html>
