@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+
+  <h2>BOARD</h2>
+
+  <h4><a th:onclick="|location.href='@{form}'|">write</a></h4>
+
+  <div>
+      <div data-th-each="boardResponseDto : ${boardResponseDtos}">
+        <div>
+          <span data-th-text="'No. ' + ${boardResponseDto.no}">1</span>
+        </div>
+        <div>
+          <a href="detail?no=1"
+             data-th-href="@{detail(no=${boardResponseDto.no})}"
+             data-th-text="${boardResponseDto.title}">제목</a>
+        </div>
+        <div>
+          <span data-th-text="${boardResponseDto.writer}">작성자</span>
+        </div>
+          <!-- 수평선 태그 : <hr> -->
+          <hr>
+      </div>
+
+  </div>
+</body>
+</html>
