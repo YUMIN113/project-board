@@ -2,9 +2,11 @@ package com.study.board.service;
 
 import com.study.board.domain.Board;
 import com.study.board.dto.BoardResponseDto;
+import com.study.board.dto.BoardUpdateRequestDto;
 import com.study.board.repository.BoardRepository;
 import com.study.board.dto.BoardSaveRequestDto;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,5 +43,22 @@ public class BoardService {
                 .writer(board.getWriter())
                 .content(board.getContent())
                 .build();
+    }
+
+//    @Transactional
+//    public Long update(Long no, BoardUpdateRequestDto boardUpdateRequestDto) {
+//        Optional<Board> boardWrapper = boardRepository.findById(no);
+//        Board board = boardWrapper.get();
+//
+//        board.update(boardUpdateRequestDto.getTitle(), boardUpdateRequestDto.getContent());
+//
+//        return no;
+//    }
+
+    public void delete(Long no) {
+        Optional<Board> boardWrapper = boardRepository.findById(no);
+        if(boardWrapper.isPresent()) {
+            boardRepository.delete(boardWrapper.get());
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.study.board.web;
 
 import com.study.board.dto.BoardResponseDto;
 import com.study.board.dto.BoardSaveRequestDto;
+import com.study.board.dto.BoardUpdateRequestDto;
 import com.study.board.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,4 +44,19 @@ public class BoardController {
        map.put("boardResponseDto", boardResponseDto);
        return map;
     }
+
+//    @PostMapping("update")
+//    public String update(Long no, BoardUpdateRequestDto boardUpdateRequestDto) {
+//        boardService.update(no, boardUpdateRequestDto);
+//
+//        return "redirect:list";
+//    }
+
+    @GetMapping("delete")
+    public String delete(Long no) {
+        boardService.delete(no);
+
+        return "redirect:list";
+    }
+
 }
