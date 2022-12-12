@@ -9,24 +9,43 @@
 
   <h2>DETAIL</h2>
 
+  <form data-th-action="@{update}" method="post">
   <div>
       <div>
-          <span data-th-text="'No. ' + ${boardResponseDto.no}">1</span>
+          <span id="no" name="no"
+                data-th-text="'No. ' + ${boardResponseDto.no}">1</span>
       </div>
 
       <div>
-          <span data-th-text="'Title. ' + ${boardResponseDto.title}">제목</span>
+          <label for="title">Title.</label><br>
+          <input type="text" id="title" name="title"
+                 data-th-value="${boardResponseDto.title}">
       </div>
 
       <div>
-          <span data-th-text="'Writer. ' + ${boardResponseDto.writer}">작성자</span>
+          <label for="writer">Writer.</label><br>
+          <input type="text" id="writer" name="writer"
+                 data-th-value="${boardResponseDto.writer}" readonly>
       </div>
 
       <div>
-          <span data-th-text="'Content. ' + ${boardResponseDto.content}">내용</span>
+          <label for="content">Content.</label><br>
+          <textarea id="content" name="content"
+                    rows="20" cols="25"
+                    style="white-space: pre-line;"
+                    data-th-text="${boardResponseDto.content}">내용</textarea>
       </div>
 
   </div>
+      <div>
+          <button type="submit">modify</button>
+      </div>
 
+      <div>
+          <button type="button"
+                  th:onclick="|location.href='@{delete(no=${boardResponseDto.no})}'|">delete</button>
+      </div>
+
+  </form>
 </body>
 </html>
