@@ -9,6 +9,7 @@
 
   <h2>DETAIL</h2>
 
+<div class = "detail">
   <form data-th-action="@{update}" method="post">
   <div>
       <div>
@@ -45,7 +46,22 @@
           <button type="button"
                   th:onclick="|location.href='@{delete(no=${boardResponseDto.no})}'|">delete</button>
       </div>
-
   </form>
+</div>
+
+<div class = "comment">
+    <form data-th-action = "@{comment}" method = "post">
+      <div>
+        <label for = "comment"></label>
+        <textarea id="comment" name="comment"
+                  rows="5" cols="40"
+                  placeholder="comment"></textarea>
+      </div>
+
+      <div>
+        <button type = "submit">submit</button>
+      </div>
+    </form>
+</div>
 </body>
 </html>
